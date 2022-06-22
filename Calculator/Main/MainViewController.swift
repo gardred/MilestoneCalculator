@@ -193,7 +193,7 @@ class MainViewController: BaseVC {
     
     @IBAction func clearAction(_ sender: Any) {
         
-        calculationLabel.text = "0"
+        calculationLabel.text = ""
         calculationLabel.textColor = UIColor.black
         
         resultLabel.text = ""
@@ -234,8 +234,13 @@ class MainViewController: BaseVC {
     
     @IBAction func changeSignAction(_ sender: Any) {
        
-        firstNumber.negate()
-        calculationLabel.text = ""
+        guard let text = calculationLabel.text else { return }
+        
+        if calculationLabel.text?.contains("-") == true {
+            calculationLabel.text = ""
+        } else {
+            calculationLabel.text?.insert("-", at: text.startIndex)
+        }
     }
     
     @IBAction func dotAction(_ sender: Any) {

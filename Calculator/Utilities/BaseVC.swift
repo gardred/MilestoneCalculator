@@ -20,14 +20,16 @@ class BaseVC: UIViewController {
     }
 
     func rightBarButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gobackward.minus"),
+        let image = UIImage(named: "history")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image,
                                                             style: .plain,
                                                             target: self,
                                                             action: nil)
     }
     
     func leftBarButton() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
+        let image = UIImage(named: "settings")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image,
                                                            style: .plain,
                                                            target: self,
                                                            action: nil)
